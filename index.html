@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vườn hoa xanh – Chúc mừng 20/10</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky1:#dff1ff;--sky2:#a9d6fb;--grass1:#2f7d5b;--grass2:#1d5c44;
+  --ink:#10305e;--petal:#2f6fe0;--petal2:#6fb1ff;--petal3:#1a3fa8;--center:#ffd86b;
+  --card:#ffffff;--card-ink:#12356b;--btn:#1a3fa8;--btn-ink:#ffffff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--sky1:#0c1c3d;--sky2:#17356e;--grass1:#1f5c46;--grass2:#103a2c;--ink:#e6f1ff;--card:#0f2552;--card-ink:#eaf3ff;--btn:#6fb1ff;--btn-ink:#0a1b3c}
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:'Quicksand',system-ui,sans-serif;color:var(--ink);background:linear-gradient(var(--sky1),var(--sky2) 60%);overflow:hidden;position:relative}
+.top{position:absolute;top:calc(env(safe-area-inset-top,0px) + 4vh);left:0;right:0;text-align:center;padding:0 16px;z-index:3}
+h1{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(2rem,7vw,4rem);margin:0;line-height:1.1}
+.top p{margin:.5rem 0 0;font-weight:500;font-size:clamp(.95rem,2.4vw,1.15rem);opacity:.85}
+.ground{position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(var(--grass1),var(--grass2));border-radius:50% 50% 0 0/22% 22% 0 0}
+#garden{position:absolute;inset:0;z-index:1;pointer-events:none}
+.flower{position:absolute;bottom:0;width:0;transform-origin:bottom center;animation:sway var(--d) ease-in-out infinite alternate}
+.stem{position:absolute;left:-2px;bottom:0;width:4px;height:var(--h);background:linear-gradient(#3c9a6f,#1d5c44);border-radius:2px}
+.leaf{position:absolute;left:2px;bottom:calc(var(--h)*.35);width:22px;height:11px;background:#3c9a6f;border-radius:0 100% 0 100%}
+.leaf.l{left:-24px;transform:scaleX(-1)}
+.head{position:absolute;left:calc(var(--s)/-2);bottom:calc(var(--h) - var(--s)/2);width:var(--s);height:var(--s)}
+.head i{position:absolute;left:50%;top:50%;width:34%;height:50%;margin:-50% 0 0 -17%;background:var(--c);border-radius:50% 50% 50% 50%/70% 70% 30% 30%;transform-origin:50% 100%;transform:rotate(var(--r)) translateY(-4%)}
+.head b{position:absolute;left:50%;top:50%;width:28%;height:28%;margin:-14% 0 0 -14%;background:var(--center);border-radius:50%;box-shadow:inset 0 -2px 0 rgba(0,0,0,.15)}
+@keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+.dock{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 5vh);display:flex;justify-content:center;z-index:4}
+button.card-btn{font:700 1.1rem 'Quicksand',system-ui,sans-serif;background:var(--btn);color:var(--btn-ink);border:0;border-radius:999px;padding:.95rem 2rem;cursor:pointer;box-shadow:0 8px 24px rgba(16,48,94,.35);transition:transform .15s}
+button.card-btn:hover{transform:translateY(-2px) scale(1.03)}
+button:focus-visible{outline:3px solid var(--center);outline-offset:3px}
+.overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(8,24,60,.5);z-index:10}
+.overlay.on{display:flex}
+.card{position:relative;max-width:460px;width:100%;max-height:86%;overflow:auto;background:var(--card);color:var(--card-ink);border-radius:22px;padding:2.2rem 1.8rem 1.8rem;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);border:3px solid var(--petal2);animation:pop .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.7) rotate(-3deg);opacity:0}to{transform:none;opacity:1}}
+.card h2{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.9rem;margin:.2rem 0 .8rem}
+.card p{margin:.6rem 0;line-height:1.65;font-size:1.05rem}
+.card .sign{font-weight:700;margin-top:1.1rem}
+.mini{font-size:2rem;letter-spacing:.3rem}
+.close{position:absolute;top:10px;right:14px;background:none;border:0;font-size:1.6rem;color:inherit;cursor:pointer;line-height:1}
+.petal-fall{position:fixed;top:-20px;width:12px;height:16px;background:var(--petal2);border-radius:50% 0 50% 50%;z-index:11;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+@media (prefers-reduced-motion:reduce){.flower{animation:none}.card{animation:none}}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>20/10 – Ngày hoa nở</h1>
+  <p>Một vườn hoa xanh dành tặng người con gái của anh tuyệt vời</p>
+</div>
+<div class="ground"></div>
+<div id="garden" aria-hidden="true"></div>
+<div class="dock"><button class="card-btn" id="open">Thiệp mừng bé</button></div>
+
+<div class="overlay" id="ov" role="dialog" aria-modal="true" aria-labelledby="t">
+  <div class="card">
+    <button class="close" id="close" aria-label="Đóng">×</button>
+    <div class="mini" aria-hidden="true">💙🌸💙</div>
+    <h2 id="t">Chúc mừng ngày 20/10!</h2>
+    <p>Chúc bé luôn rạng rỡ như đóa hoa xanh đầu mùa, vững vàng trước gió và dịu dàng dưới nắng.</p>
+    <p>Chúc bé mỗi ngày thức dậy đều thấy nhẹ lòng và bình yên luôn ở bên cạnh.</p>
+    <p>Cảm ơn bé vì đã làm cho thế giới của anh đẹp hơn rất nhiều. Hôm nay bé chỉ cần được yêu thương và được nghỉ ngơi thôi nhé!</p>
+    <p class="sign">Yêu bé thật nhiều Xì Chumm💙</p>
+    <p class="sign">Từ một chàng trai người tình vô tâm 💙</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var g=document.getElementById('garden');
+  var cols=['#2f6fe0','#6fb1ff','#1a3fa8','#4d8cf0','#8cc4ff','#3a5fd0'];
+  var vw=Math.max(window.innerWidth,320);
+  var n=vw<600?16:30, html='';
+  for(var i=0;i<n;i++){
+    var left=(i+Math.random()*.8)/n*100;
+    var h=40+Math.random()*(vw<600?110:150);
+    var s=34+Math.random()*30;
+    var c=cols[Math.floor(Math.random()*cols.length)];
+    var d=(2.5+Math.random()*2.5).toFixed(1)+'s';
+    var delay=(-Math.random()*4).toFixed(1)+'s';
+    var petals='';
+    for(var p=0;p<8;p++)petals+='<i style="--r:'+(p*45)+'deg"></i>';
+    html+='<div class="flower" style="left:'+left+'%;bottom:'+(2+Math.random()*10)+'%;--h:'+h+'px;--s:'+s+'px;--c:'+c+';--d:'+d+';animation-delay:'+delay+'">'+
+      '<span class="stem"></span><span class="leaf"></span><span class="leaf l"></span>'+
+      '<span class="head">'+petals+'<b></b></span></div>';
+  }
+  g.innerHTML=html;
+
+  var ov=document.getElementById('ov'),openB=document.getElementById('open'),closeB=document.getElementById('close');
+  function show(){
+    ov.classList.add('on');closeB.focus();
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    for(var i=0;i<24;i++){
+      var e=document.createElement('span');e.className='petal-fall';
+      e.style.left=Math.random()*100+'vw';
+      e.style.animationDuration=(3+Math.random()*3)+'s';
+      e.style.animationDelay=(Math.random()*1.5)+'s';
+      document.body.appendChild(e);
+      setTimeout(function(x){return function(){x.remove()}}(e),7000);
+    }
+  }
+  function hide(){ov.classList.remove('on');openB.focus()}
+  openB.addEventListener('click',show);
+  closeB.addEventListener('click',hide);
+  ov.addEventListener('click',function(e){if(e.target===ov)hide()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')hide()});
+})();
+</script>
+</body>
+</html>
